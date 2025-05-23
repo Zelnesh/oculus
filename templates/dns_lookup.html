@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+{%block title%}DNS Lookup{%endblock%}
+{%block content%}
+  <form method="POST" class="cyber-form">
+    {{ form.hidden_tag()}}
+    <div>
+      {{ form.dns_name(class="cyber-input") }}
+    </div>
+    <div>
+      {{ form.submit(class="cyber-button") }}
+    </div>
+  </form>
+{%endblock%}

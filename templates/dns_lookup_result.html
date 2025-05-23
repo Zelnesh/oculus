@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+{%block title%}DNS Lookup Result{%endblock%}
+{%block content%}
+  <div class="cyber-result-container">
+    <div class="cyber-result-header">Result</div>
+    {% for key,value in data.items() %}
+    <div class="cyber-result-item">
+      <span class="cyber-result-key">{{ key|capitalize }}:</span>
+      <span class="cyber-result-value">{{ value }}</span>
+    </div>
+    {%endfor%}
+  </div>
+{%endblock%}
