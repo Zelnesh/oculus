@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+{%block title%}Open Ports{%endblock%}
+{%block content%}
+  <div class="cyber-result-container">
+    <div class="cyber-result-header">Result</div>
+    {% for port in open_ports %}
+    <div class="cyber-result-item">
+      <span class="cyber-result-key">Port {{ port }} is Open</span>
+    </div>
+    {%endfor%}
+  </div>
+{%endblock%}
+

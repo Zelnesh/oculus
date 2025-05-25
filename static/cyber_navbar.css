@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+/* Cyber Animation Pulse */
+@keyframes neon-glow {
+  0% {
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc;
+    box-shadow: 0 0 2px #00ffcc, 0 0 5px #00ffcc, 0 0 10px #00ffcc inset;
+  }
+  50% {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    box-shadow: 0 0 4px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff inset;
+  }
+  100% {
+    text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc;
+    box-shadow: 0 0 2px #00ffcc, 0 0 5px #00ffcc, 0 0 10px #00ffcc inset;
+  }
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #0a0a0a;
+  border-bottom: 2px solid #00ffcc;
+  animation: neon-glow 3s infinite ease-in-out;
+  font-family: 'Orbitron', sans-serif;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  color: #00ffcc !important;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px #00ffcc;
+  animation: neon-glow 3s infinite ease-in-out;
+}
+
+.navbar-toggler {
+  border: 1px solid #00ffcc;
+  background-color: transparent;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2300ffcc' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.nav-link {
+  color: #00ffcc !important;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+  animation: neon-glow 3s infinite ease-in-out;
+}
+
+.nav-link:hover {
+  color: #00ffff !important;
+  text-shadow: 0 0 8px #00ffff;
+  transform: scale(1.05);
+}
+
+/* Cyber Heading */
+.cyber-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+  margin-bottom: 1rem;
+}
+
+/* Cyberpunk Navbar Collapsed Menu */
+.cyber-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.cyber-menu a {
+  color: #00ffcc;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px #00ffcc;
+  transition: 0.3s ease;
+}
+
+/* CONTAIN overflow glow inside the menu */
+.cyber-collapse-menu > .p-4 {
+  background-color: rgba(10, 10, 10, 0.85);
+  border: 2px solid #00ffcc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00ffcc, inset 0 0 15px #00ffcc;
+  overflow: hidden; /* <-- important! prevents glow from spilling */
+  max-width: 300px;  /* <-- optional: limits width for mobile */
+}
+
+/* Cyber hover effect without pushing layout */
+.cyber-menu a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 15px #00ffff;
+  /* Removed transform: scale(1.05); */
+  padding-left: 6px; /* subtle motion instead of scale */
+}

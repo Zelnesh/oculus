@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%block title%}Port Scanner{%endblock%}
+{%block content%}
+  <form method="POST" class="cyber-form">
+    {{ form.hidden_tag()}}
+    <div>
+      {{ form.ip_address(class="cyber-input") }}
+    </div>
+    <div>
+      {{ form.ports(class="cyber-input") }}
+    </div>
+    <div>
+      {{ form.submit(class="cyber-button") }}
+    </div>
+  </form>
+{%endblock%}
+

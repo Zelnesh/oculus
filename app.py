@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
-from forms import DNSForm,IPGForm
-from fetch import DNSLookup,IPGlocation
+from forms import DNSForm,IPGForm,PortScannerForm
+from fetch import DNSLookup,IPGlocation,PortScanner
+import asyncio
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'cyberpunk-key'
@@ -35,6 +36,20 @@ def ipg_location():
         result = ip_record.fetch_info()
         return render_template('ip_geolocation_result.html', data=result)
     return render_template('ip_geolocation.html', form=form)
+
+# Port Scanner page
+@app.route('/port_scanner', methods=['GET', 'POST'])
+def port_scanner():
+    form = PortScannerForm()
+    reult = None
+
+    if form.validate_on_submit():
+        ip = form.ip_address.data
+        ports = int(form.ports.data)
+        scanner = PortScanner(ip, ports)
+        open_ports = asyncio.run(scanner.scan_ports())
+        return render_template('port_scanner_result.html', open_ports=open_ports)
+    return render_template('port_scanner.html', form=form)
 
 if __name__ == '__main__':
     app.run(debug=True)
