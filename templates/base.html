@@ -30,25 +30,27 @@
 <body>
   <!-- Collapsible cyberpunk navbar -->
   <div class="collapse cyber-collapse-menu" id="navbarToggleExternalContent" data-bs-theme="dark">
-    <div class="p-4">
-      <h5 class="cyber-heading">OCULUS</h5>
-      <nav class="cyber-menu">
-        <a href="{{ url_for('main') }}">Main</a>
-        <a href="{{ url_for('dns_lookup') }}">DNS Lookup</a>
-        <a href="{{ url_for('ipg_location') }}">IP Geolocation</a>
-        <a href="{{ url_for('port_scanner') }}">Port Scanner</a>
-      </nav>
-    </div>
+  <div class="p-4">
+    <h5 class="cyber-heading">OCULUS</h5>
+    <nav class="cyber-menu">
+      <a href="{{ url_for('main') }}">Main</a>
+      <a href="{{ url_for('dns_lookup') }}">DNS Lookup</a>
+      <a href="{{ url_for('ipg_location') }}">IP Geolocation</a>
+      <a href="{{ url_for('port_scanner') }}">Port Scanner</a>
+    </nav>
   </div>
+</div>
 
   <!-- Navbar toggle button -->
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </nav>
+  <nav class="navbar cyber-navbar">
+  <div class="container-fluid">
+    <button class="navbar-toggler cyber-toggle-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="cyber-toggle-btn-line"></span>
+      <span class="cyber-toggle-btn-line"></span>
+      <span class="cyber-toggle-btn-line"></span>
+    </button>
+  </div>
+</nav>
 
   <!-- Main content -->
   <div class="container mt-4">
